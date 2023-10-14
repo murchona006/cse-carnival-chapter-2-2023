@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "343955373431",
+    "project_id": "auth-v2-27a5a",
+    "storage_bucket": "auth-v2-27a5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343955373431:android:262f48e602a818be5f3572",
+        "android_client_info": {
+          "package_name": "com.example.auth_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdyuGYOEMstw0SaIviaNew4NZKYbn3DWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
