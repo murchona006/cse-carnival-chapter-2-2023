@@ -3,7 +3,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
-const Color AppColor_Blue = Color.fromARGB(255, 89, 180, 255);
+const Color AppColor_Blue = Color(0xFF041B46);//Color.fromARGB(255, 89, 180, 255);
 const Color AppColor_Black = Colors.black;
 const Color AppColor_Gray = Colors.grey;
 const Color AppColor_White = Colors.white;

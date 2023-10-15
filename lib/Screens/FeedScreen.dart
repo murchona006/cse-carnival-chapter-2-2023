@@ -1,4 +1,5 @@
-import 'package:auth_test/Screens/AdminPanelScreen.dart';
+import 'package:auth_test/Screens/AdminChatScreen.dart';
+import 'package:auth_test/Screens/resourse.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -25,13 +26,27 @@ class _FeedScreenState extends State<FeedScreen> {
     super.initState();
   }
 
-  Widget getSelectedScreen() {
+  Widget getSelectedDSA(){
     if (widget.currentUserId == "CwXqp7gKtPWUmi9VNJXO0GX7S0G2") {
-      // If the user ID matches the admin, return the AdminPanel screen.
-      return AdminPanel();
+      return Resource();
+
     } else {
       // For other users, return the Messenger screen.
-      return Messenger(currentUserId: widget.currentUserId,);
+      return DSA();
+    }
+  }
+
+  Widget getSelectedScreen() {
+    if (widget.currentUserId == "CwXqp7gKtPWUmi9VNJXO0GX7S0G2") {
+      return AdminPanel(adminUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2',);
+      // If the user ID matches the admin, return the AdminPanel screen.
+      // return AdminMessage(currentUserId: widget.currentUserId, adminUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2',);
+      // return AdminMessage(currentAdminId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2', );
+     // return AdminPanelScreen(currentUserId: widget.currentUserId);
+     //  return AdminChatListScreen();
+    } else {
+      // For other users, return the Messenger screen.
+      return Messenger(currentUserId: widget.currentUserId, chatUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2', adminUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2',);
     }
   }
 
@@ -42,7 +57,8 @@ class _FeedScreenState extends State<FeedScreen> {
         HomeScreen(
           currentUserId: widget.currentUserId,
         ),
-        DSA(),
+        getSelectedDSA(),
+        // DSA(),
         getSelectedScreen(), // Use the function to get the selected screen.
         SearchScreen(
           currentUserId: widget.currentUserId,
@@ -55,7 +71,8 @@ class _FeedScreenState extends State<FeedScreen> {
       bottomNavigationBar: GNav(
         backgroundColor: AppColor_Blue,
         color: AppColor_White,
-        tabBackgroundColor: Colors.blue,
+        tabBackgroundColor: Color(
+            0xFF71CBF8),//Colors.blue,
         gap: 8,
         padding: EdgeInsets.all(16),
         onTabChange: (index) {
@@ -88,7 +105,7 @@ class _FeedScreenState extends State<FeedScreen> {
               //     androidPackageName: 'com.coderscombo.chatapp',
               //   );
               // }
-              Messenger(currentUserId: widget.currentUserId);
+              Messenger(currentUserId: widget.currentUserId, chatUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2', adminUserId: 'CwXqp7gKtPWUmi9VNJXO0GX7S0G2',);
             },
           ),
           GButton(
